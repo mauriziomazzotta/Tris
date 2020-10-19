@@ -4,8 +4,7 @@ public class Field {
 
     public Field() {
         for(int i=0; i<3; i++)
-            for(int j =0; j<3; j++)
-            {
+            for(int j =0; j<3; j++) {
                 field[i][j] = ' ';
             }
     }
@@ -27,14 +26,14 @@ public class Field {
     }
 
     public boolean win(){
-        if(    (field[0][0]== field[0][1] && field[0][1]== field[0][2] && field[0][0]!=' ') ||
-                (field[1][0]== field[1][1] && field[1][1]== field[1][2] && field[1][0]!=' ') ||
-                (field[2][0]== field[2][1] && field[2][1]== field[2][2] && field[2][0]!=' ') ||
-                (field[0][0]== field[1][0] && field[0][0]== field[2][0] && field[0][0]!=' ') ||
-                (field[0][1]== field[1][1] && field[1][1]== field[2][1] && field[0][1]!=' ') ||
-                (field[0][2]== field[1][2] && field[0][2]== field[2][2] && field[0][2]!=' ') ||
-                (field[0][0]== field[1][1] && field[1][1]== field[2][2] && field[0][0]!=' ') ||
-                (field[0][2]== field[1][1] && field[1][1]== field[2][0] && field[0][2]!=' ')){
+        if( (field[0][0] == field[0][1] && field[0][1] == field[0][2] && field[0][0]!=' ') ||
+            (field[1][0] == field[1][1] && field[1][1] == field[1][2] && field[1][0]!=' ') ||
+            (field[2][0] == field[2][1] && field[2][1] == field[2][2] && field[2][0]!=' ') ||
+            (field[0][0] == field[1][0] && field[0][0] == field[2][0] && field[0][0]!=' ') ||
+            (field[0][1] == field[1][1] && field[1][1] == field[2][1] && field[0][1]!=' ') ||
+            (field[0][2] == field[1][2] && field[0][2] == field[2][2] && field[0][2]!=' ') ||
+            (field[0][0] == field[1][1] && field[1][1] == field[2][2] && field[0][0]!=' ') ||
+            (field[0][2] == field[1][1] && field[1][1] == field[2][0] && field[0][2]!=' ')){
             return true;
         }else{
             return false;
@@ -44,15 +43,15 @@ public class Field {
     @Override
     public String toString()
     {
-        String r = "";
-        for(int i=0; i<3; i++) {
-            r = r + "|";
+        String s = "";
+        for(int i=0; i<3; i++){
+            s = s + "|";
             for (int j=0; j<3 ; j++){
-                r = r + field[i][j];
-                r = r + "|";
+                s = s + field[i][j];
+                s = s + "|";
                 }
-            r = r + "\n";
+            s = s + "\n";
         }
-        return r;
+        return s;
     }
 }
