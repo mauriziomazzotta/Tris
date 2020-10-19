@@ -28,7 +28,7 @@ public class Main {
                     colonna = in.nextInt();
 
                     if (!field.validMove(riga, colonna)) {
-                        System.out.println("Mossa non valida");
+                        System.out.println("Casella occupata, ritenta.");
                     }
                 } while (!field.validMove(riga, colonna));
 
