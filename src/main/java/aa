@@ -1,0 +1,43 @@
+package it.eforhum.corsojava.oop.bean;
+
+import java.lang.reflect.Array;
+
+public class Field {
+
+    char [][] campo = new char[3][3];
+
+    public void set(int i, int j, int player) {
+        if(player==1){
+            this.campo[i][j]='X';
+        }else{
+            this.campo[i][j]='O';
+        }
+    }
+
+    public boolean win(){
+        if(    (campo[0][0]==campo[0][1] && campo[0][1]==campo[0][2] && campo[0][0]!=' ') ||
+                (campo[1][0]==campo[1][1] && campo[1][1]==campo[1][2] && campo[1][0]!=' ') ||
+                (campo[2][0]==campo[2][1] && campo[2][1]==campo[2][2] && campo[2][0]!=' ') ||
+                (campo[0][0]==campo[1][0] && campo[0][0]==campo[2][0] && campo[0][0]!=' ') ||
+                (campo[0][1]==campo[1][1] && campo[1][0]==campo[1][2] && campo[0][1]!=' ') ||
+                (campo[0][2]==campo[1][2] && campo[2][1]==campo[2][2] && campo[0][2]!=' ') ||
+                (campo[0][0]==campo[1][1] && campo[2][1]==campo[2][2] && campo[0][0]!=' ') ||
+                (campo[0][2]==campo[1][1] && campo[1][1]==campo[2][0] && campo[0][2]!=' ')){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    @Override
+    public String toString()
+    {
+        String r = "";
+        for(int i=0; i<3; i++) {
+            r = r + "|";
+            for (int j=0; j<3 ; j++)
+                r=r + campo[i][j];
+            r = r + "|\n";
+        }
+        return r;
+    }
+}
